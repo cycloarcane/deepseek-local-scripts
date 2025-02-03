@@ -7,11 +7,8 @@ data = {
 }
 response = requests.post(url, json=data)
 script = response.text
-# Create a Git repository and add the generated script to it
-repo = git.Repo.init()
-repo.git.add(A=".")
-repo.git.commit(m="Initial commit")
-# Add the generated script to the repository and commit
+# Add the generated script to the existing repository and commit
+repo = git.Repo('https://github.com/cycloarcane/deepseek-local-scripts')
 repo.git.add(A=".")
 repo.git.commit(m="Added generated script")
 # Push the changes to GitHub
