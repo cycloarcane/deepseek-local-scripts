@@ -14,6 +14,9 @@ data = {
 }
 response = requests.post(url, json=data)
 filename = response.text
+# Write the generated script to a file with the generated filename
+with open(filename, "w") as f:
+    f.write(script)
 # Add the generated script to the existing repository and commit
 repo = git.Repo('.')
 repo.git.add(A=".")
