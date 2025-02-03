@@ -8,7 +8,7 @@ data = {
 response = requests.post(url, json=data)
 script = response.text
 # Make a request to the LLM to generate a filename based on the generated script
-url = 'http://127.0.0.1:5000/generate_filename'
+url = 'http://127.0.0.1:5000/v1/'
 data = {
     "prompt": f"Give this script a unique filename: {script}"
 }
