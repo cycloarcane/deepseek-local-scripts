@@ -7,10 +7,10 @@ from datetime import datetime
 GITHUB_REPO = "cycloarcane/deepseek-local-scripts"
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")  # Ensure this is set in environment variables
 LLM_ENDPOINT = "http://127.0.0.1:5000/v1/"
-
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # Initialize OpenAI client
 openai.api_base = LLM_ENDPOINT
-client = openai.Client()
+client = openai.Client(base_url="http://127.0.0.1:5000/v1")
 
 def generate_random_script():
     try:
